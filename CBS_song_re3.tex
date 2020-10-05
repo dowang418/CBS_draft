@@ -1,0 +1,430 @@
+\documentclass[twocolumn,showpacs,preprintnumbers,superscriptaddress,amsmath,amssymb]{revtex4}
+\usepackage{amssymb}		%math formula
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[normalem]{ulem}
+\usepackage{multirow}
+\usepackage{appendix}
+\usepackage{CJK}
+\usepackage[usenames]{color}
+\usepackage{bm}
+\usepackage{hyperref}
+% 10.1
+\usepackage{booktabs} 	% table!
+\usepackage{leftidx}
+
+
+\makeatletter
+\newcommand{\rmnum}[1]{\romannumeral #1}
+\newcommand{\Rmnum}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+\begin{document}
+\begin{CJK*} {UTF8} {gbsn}
+%\begin{CJK*} {GB} {gbsn}
+
+\title{Baryon-strangeness correlations in system size scan in relativistic heavy-ion collisions from a multiphase transport model}
+
+% my name
+\author{Dong-Fang Wang(王东方)}
+
+
+%\affiliation{Shanghai Institute of Applied Physics, Chinese Academy of Sciences, Shanghai 201800, China}
+\affiliation{Key Laboratory of Nuclear Physics and Ion-beam Application (MOE), Institute of Modern Physics, Fudan University, Shanghai 200433, China}
+
+% adviser name
+\author{Song Zhang(张松)}\thanks{Email: song\_zhang@fudan.edu.cn}
+\affiliation{Key Laboratory of Nuclear Physics and Ion-beam Application (MOE), Institute of Modern Physics, Fudan University, Shanghai 200433, China}
+
+\author{Yu-Gang Ma(马余刚)}\thanks{Email:  mayugang@fudan.edu.cn}
+\affiliation{Key Laboratory of Nuclear Physics and Ion-beam Application (MOE), Institute of Modern Physics, Fudan University, Shanghai 200433, China}
+%\affiliation{Shanghai Institute of Applied Physics, Chinese Academy of Sciences, Shanghai 201800, China}
+
+
+% Part 0.0: abstrac
+\begin{abstract}
+The system size dependence of baryon-strangeness correlations ($C_{BS}$) are studied with a multiphase transport model for various collision systems from 
+$\mathrm{^{10}B+^{10}B}$, $\mathrm{^{12}C+^{12}C}$, $\mathrm{^{16}O+^{16}O}$, $\mathrm{^{20}Ne+^{20}Ne}$, $\mathrm{^{40}Ca+^{40}Ca}$, $\mathrm{^{96}Zr+^{96}Zr}$, and $\mathrm{^{197}Au+^{197}Au}$ at RHIC energies $\sqrt{s_{NN}}$ of 200, 39, 27, 19.6, and 7.7 GeV.
+%By comparing these results to the latest experimental data from the STAR Collaboration.
+The effect of hadronic re-scattering and a combination of hadrons are playing a leading role in baryon-strangeness correlations and 
+when limiting the kinetic window to $|y|>3$, these correlations, after final interaction, tend to be constant no matter what kind of hadrons subset we choose based on AMPT framework. The correlations smoothly increase with the increasing of baryon chemical potential $\mu_B$ which corresponds to the collision systems (or energy) from the QGP-like phase to the hadron-gas-like phase.
+{\sout {In addition, we take into count the influence of initially nuclear geometry structures thought light clusters in $\mathrm{^{12}C+^{12}C}$, $\mathrm{^{16}O+^{16}O}$ collision system. }}
+These model studies can provide baselines for searching for the signals of QCD phase transition and critical point in heavy-ion collisions.
+ 	\end{abstract}
+\maketitle
+
+
+
+	% Part 1.0 introduction
+	\section{Introduction}
+	% basic intro
+	\par
+	Quark-gluon plasma (QGP) is proved to create in relativistic heavy-ion collisions~\cite{phase_e1,phase_e2,phase_e3,phase_e4}. 
+	This brings a fundamental problem, that is how to identify this hot and dense matter or fully understand the phase diagram of QGP matter.
+	Lattice QCD calculations show that the transition from hadronic phase to QGP phase is a crossover at zero baryon-chemical potential $(\mu_{B}=0)$ 
+	with a transition temperature $T_{c}\sim166$ MeV~\cite{tc_1,tc_2}.
+	%Lots of efforts in the experiment has been made.
+	In the years 2010 - 2017, Relativistic Heavy Ion Collider (RHIC) performed the beam energy scan (BES) program~\cite{bes_1,bes_2,bes_3}
+	To answer the above question, there is a feasible approach to explore it through studying fluctuations~\cite{koch_re,jeon2003eventbyevent}.
+	
+	% say something about fluctuations.
+	\par
+	Theoretical calculations show that fluctuations and correlations of conserved charges are distinctly different in the hadronic and quark-gluon plasma (QGP) phases~\cite{LuoNST},
+	and measuring them in the experiment would directly distinguish between the two phases~\cite{Adare_2016}.
+	In recent years, the analysis of event-by-event fluctuations of the net-conserved charges like baryon number ($B$), electric charge ($Q$), and strangeness ($S$), in particular, their higher-order cumulants experiments have been announced at RHIC~\cite{exp_1,exp_2} and LHC~\cite{exp_3,exp_4}.
+	
+	
+	
+	One of the event-by-event observables has been proposed by Koch~\cite{Koch_origin}, the baryon-strangeness correlation coefficient,
+	\begin{eqnarray}%{equation}
+	\begin{aligned}
+	 C_{BS} = -3\frac{\left\langle BS \right\rangle - \left\langle B \right\rangle \left\langle S \right\rangle}{\left\langle S^{2}  \right\rangle - \left\langle S \right\rangle^{2}}.
+	 \end{aligned}
+	\end{eqnarray}%{equation}
+	where $B$ and $S$ are the net-baryon number and net-strangeness in one event, respectively.
+	The average values over the whole event ensemble are denoted by $\left\langle \cdot \right\rangle$.
+	This correlation is proposed as a tool to specify the nature (ideal QGP or strongly coupled QGP or hadronic matter) of the highly compressed and heated matter created in heavy ions collisions.
+	After that, people used a specific model, such as (2 + 1) Polyakov Quark Meson Model~\cite{u_model1}, 
+	hadron resonance gas model~\cite{u_model2,u_model3}, UrQMD~\cite{u_model4,Haussler_2007,Luo_UrQMD}
+	 to study the fluctuations and compare them with Lattice QCD results~\cite{lattice_1,lattice_2}.
+	
+	\par
+	%Not only the fluctuation of conserved charges has attracted people's attention, but small systems~\cite{small_sys_LHC,small_sys_1} have also been widely discussed in recent years.
+	The investigation in a small system underwent many years in experiments and theoretical works~\cite{small_sys_LHC,small_sys_1}. Recently some proposals of system scan were promoted to study the evidence of QGP matter in the small system and how the initial state affects the final state~\cite{SHuang2020sysScan,PRC2029sysScanLHC,ZHANG2020135366}.
+	And ALICE collaboration reported the enhanced production of multi-strange hadrons in high-multiplicity proton-proton collisions~\cite{smallSystemALICE2017}. Baryon-strangeness correlations related to the QGP phase transition may also be sensitive to the fluctuations from a small system to large systems in heavy-ion collisions.
+	
+	%With more and more collision system proposed in the experiments after BES program, naturally, we want to understand the system dependence of physical quantities such as collective flow.
+	%From the existing experimental results, we found, in small system, the evidence of QGP matter could also been measured which is contrary to expectations. 
+	
+	
+	
+	% this work CBS + system scan + energy scan.
+	\par
+	In this work, we adopt a multiphase transport model to study colliding system size influence on baryon-strangeness correlations $C_{BS}$.
+	By tuning the colliding energies of two nuclei, we also research the energy dependence of correlations $C_{BS}$.
+		In addition, we also study the maximum rapidity accepted $y_{\text{max}}$ dependence and the influence of initially nuclear geometry structure.
+	
+	% this paper structure
+	The paper is organized as follows. 
+	First, in Sec.\ref{sec:model}, we will give a short introduction to a multiphase transport (AMPT) model and some input parameters used in this study are presented
+	and briefly manifest the physical picture of baryon-strangeness correlations.
+	Next, the baryon-strangeness correlations as a function of system size, energy, and $y_{\text{max}}$ are discussed in Sec.\ref{sec:result}. 
+	Finally, a brief summary is presented in Sec.\ref{sec:summary}.
+	
+	
+	\section{Model and methodology}
+	\label{sec:model}
+	\subsection{Brief introduction to AMPT model}
+	A multi-phase transport model (AMPT), which is a hybrid dynamic model, is employed to calculate different collision systems.
+	The AMPT model can describe the $p_{T}$ distribution of charged particles \cite{xujun,suppressionhighpt,Ye_2017,JinXH} and their elliptic flow of Pb+Pb collisions
+	at $\sqrt{s_{NN}} = 2.76$ TeV, as measured through the LHC-ALICE Collaboration. The model includes four main components to describe
+	the relativistic heavy-ion collision process: the initial conditions simulated using the Heavy Ion Jet Interaction Generator (HIJING) model~\cite{HIJING-1,HIJING-2}, the partonic interactions described by Zhang's Parton Cascade (ZPC) model~\cite{ZPCModel}, the hadronization process through a Lund string fragmentation or coalescence model, and the hadronic re-scattering process using A Relativistic Transport (ART) model~\cite{ARTModel}. There are two versions of AMPT: 1) the AMPT version with a string melting mechanism, in which a partonic phase is generated from excited strings in the HIJING model, where a simple quark coalescence model is used to combine the partons into hadrons; and 2) the default AMPT version which only undergoes a pure hadron gas phase. The details of AMPT can be found in Ref.~\cite{AMPT_origin}.
+
+		In the AMPT model, impact parameter $b$, which is the distance between the center of the two collided nuclei, can determine the collision centrality. In addition, the number of participants is always related to the centrality or impact parameter. In this study, we use different collision system and energy, the corresponding maximum impact parameters, the number of participants $N_{Part}$, and the number of events, which are listed in Table~\ref{AMPT_info}.
+		
+		In this calculation, we adopt the AMPT parameters, suggested in Ref.~\cite{Ye_2017}
+	\begin{table*}[]
+\scriptsize
+\centering
+\caption{AMPT input parameters and $\left\langle \mathrm{N_{part}}\right\rangle$ values of different collision systems.}
+\label{AMPT_info}
+
+	\begin{tabular}{cc|cc|cc|cc}
+\toprule
+\multicolumn{2}{c}{} & \multicolumn{2}{c}{$\sqrt{s_{NN}}$ = 200GeV} & \multicolumn{2}{c}{$\sqrt{s_{NN}}$ = 19.6GeV} & \multicolumn{2}{c}{$\sqrt{s_{NN}}$ = 7.7GeV} \\
+\cmidrule(r){3-4} \cmidrule(r){5-6} \cmidrule(r){7-8}
+System & $\mathrm{\it{b_{max}}[\it{fm}]}$
+&$\left\langle \mathrm{N_{part}}\right\rangle$ &Event counts
+&$\left\langle \mathrm{N_{part}}\right\rangle$ &Event counts
+&$\left\langle \mathrm{N_{part}}\right\rangle$ &Event counts      \\
+\hline
+$\mathrm{\leftidx{^{10}}B} + \mathrm{\leftidx{^{10}}B}$		&1.15619		&14.8  &7$\times 10^{4}$    	&13.2  &12$\times 10^{4}$  &13.1  &16$\times 10^{4}$\\
+$\mathrm{\leftidx{^{12}}C} + \mathrm{\leftidx{^{12}}C}$		&1.22864		&18.7  &10$\times 10^{4}$    	&16.8  &6$\times 10^{4}$ 	&16.7  &10$\times 10^{4}$\\
+$\mathrm{\leftidx{^{16}}O}+\mathrm{\leftidx{^{16}}O}$		&1.35229		&25.5   &10$\times 10^{4}$	&23.1  &4$\times 10^{4}$	&23.0  &10$\times 10^{4}$ \\
+$\mathrm{\leftidx{^{20}}Ne}+\mathrm{\leftidx{^{20}}Ne}$		&1.45671		&32.8  &2$\times 10^{4}$	&30.0  &4$\times 10^{4}$	&29.8  &2$\times 10^{4}$\\
+$\mathrm{\leftidx{^{40}}Ca}+\mathrm{\leftidx{^{40}}Ca}$		&1.83534		&69.3  &2$\times 10^{4}$	&65.0  &1$\times 10^{4}$	&64.9  &1$\times 10^{4}$ \\
+$\mathrm{\leftidx{^{96}}Zr}+\mathrm{\leftidx{^{96}}Zr}$ 		&2.45727		&174.2 &2$\times 10^{4}$	&167.3  &2$\times 10^{4}$	&166.9 &3$\times 10^{4}$\\
+$\mathrm{\leftidx{^{197}}Au}+\mathrm{\leftidx{^{197}}Au}$		&3.1226		&364.1 &1$\times 10^{4}$	&354  &3$\times 10^{4}$	&353.8  &3$\times 10^{4}$\\
+\bottomrule
+\end{tabular}
+\end{table*}
+	
+	\subsection{Baryon-strangeness correlations $C_{BS}$}
+	How to diagnose or find a very clear probe to distinguish QGP matter always is the core issue of understanding the QGP phase transition in relativistic heavy-ion collisions.
+	This correlation coefficient $C_{BS}$ has its own advantages, such as conserved quantities, less uncertainty due to hadronization.
+	
+	In terms of physical picture, on the one hand, under ideal QGP assumption, where the basic degrees of freedom are weakly interacting quarks and gluons at high temperature,  $\left\langle S \right\rangle$ keeps $0$ and $C_{BS}$ can be written as $C_{BS} = -3 \frac{\left\langle BS \right\rangle}{\left\langle S^{2}\right\rangle}=1$,
+	noting that the baryon number of a quark is $1/3$ and the strangeness of a strange quark is $-1$ and the strangeness only carried by $s$ quark~\cite{Koch_origin}.
+	However, this feature is different from a hadron gas, and this coefficient strongly depends on the hadronic environment.
+	Under multiplicities are uncorrelated assumption, $C_{BS}$ can be written as~\cite{Koch_origin}
+\begin{equation}
+C_{B S} \approx 3 \frac{\langle\Lambda\rangle+\langle\bar{\Lambda}\rangle+\cdots+3\left\langle\Omega^{-}\right\rangle+3\left\langle\bar{\Omega}^{+}\right\rangle}{\left\langle K^{0}\right\rangle+\left\langle\bar{K}^{0}\right\rangle+\cdots+9\left\langle\Omega^{-}\right\rangle+9\left\langle\bar{\Omega}^{+}\right\rangle}.
+\end{equation}
+	In actual calculation~\cite{Koch_origin},
+\begin{equation}
+C_{B S}=-3 \frac{\sum_{n} B^{(n)} S^{(n)}-\frac{1}{N}\left(\sum_{n} B^{(n)}\right)\left(\sum_{n} S^{(n)}\right)}{\sum_{n}\left(S^{(n)}\right)^{2}-\frac{1}{N}\left(\sum_{n} S^{(n)}\right)^{2}},
+\end{equation}
+where $B$ and $S$ denote the net baryon number and net strangeness observed for a given event, respectively.
+$N$ is the total number of events.
+
+The statistical error should also pay some attention as suggested in reference~\cite{Luo_UrQMD,Luo_2012}(see the Appendix).	
+%\begin{equation}
+%
+%\end{equation}
+	\section{Results and discussion}
+	\label{sec:result}
+		
+		The combination of hadrons would play an important role in the quality of the baryon-strangeness correlations $C_{BS}$. To investigate this effect, the net-baryon $B$ verse net-strangeness $S$ distribution was calculated and presented in Fig~\ref{Fig1_BS_plane}.
+		We chose two combinations of hadrons for baryon-strangeness correlation calculation in this figure:
+		(\Rmnum{1}), $p$+$n$+$\Lambda$+$\Sigma^{\pm}$+$\Xi^{\pm}$+$\Omega^{-}$+$K$, (\Rmnum{2}) $p$+$n$+$K$, 
+	where both the particle and anti-particles are included
+	with kinetic windows $0.1<p_{T}<3.0$ GeV/c and $|y|<0.2$.
+	In this figure, we could intuitively observe that the baryon-strangeness distribution is more concentrated on the center in the case of without the effect of hadronic re-scattering where $\left\langle B \right\rangle$ and $\left\langle S \right\rangle$ approximately equal to 0 which leads to stronger correlations.
+	
+	When we artificially count more strange baryons(and anti-baryons), the distribution would be stretched into elliptical distribution and lead to finite negative correlations, usually 
+	represent as:
+	\begin{equation}
+\rho_{B, S}=\frac{\operatorname{cov}(B, S)}{\sigma_{B} \sigma_{S}}=\frac{\langle(B-\langle B\rangle)(S-\langle S\rangle)\rangle}{\sqrt{\left\langle B^{2}\right\rangle-\langle B\rangle^{2}} \sqrt{\left\langle S^{2}\right\rangle-\langle S\rangle^{2}}}.
+\end{equation}
+The more strange baryons were used, the more negative correlation was presented between net-baryon $B$ and net-strangeness $S$.
+	
+		\begin{figure}[htb]
+				\includegraphics[angle=0,scale=0.45]{./Fig1_CBS_plane.eps}
+				\caption{The correlation between net-baryon $B$ and net-strangeness $S$ for two different subset of hadrons in the most central (0$-$5\%) $\mathrm{^{197}Au+^{197}Au}$ collisions at $\sqrt{s_{NN}} = 200$ GeV with the string melting AMPT framework.}
+				\label{Fig1_BS_plane}
+	\end{figure}
+	%\subsection{System and energy scan results}
+
+	In this paper, we would focus on (\Rmnum{1}) and (\Rmnum{2}) hadrons combination for calculating correlations. Following, we investigate the system size dependence of $C_{BS}$ under the effect of hadronic re-scattering. Figure~\ref{Fig2_Sys_E_scan_CBS} shows the system size dependence for all particles in 0-5\% $\mathrm{^{10}B+^{10}B}$, $\mathrm{^{12}C+^{12}C}$, $\mathrm{^{16}O+^{16}O}$, $\mathrm{^{20}Ne+^{20}Ne}$, $\mathrm{^{40}Ca+^{40}Ca}$, $\mathrm{^{96}Zr+^{96}Zr}$, and $\mathrm{^{197}Au+^{197}Au}$ collisions at $\sqrt{s_{NN}}$= 200, 19.6, and 7.7 GeV from the AMPT model. 
+	
+	In the case without hadron re-scattering where the hadronized system undergoes a partonic phase just now, the baryon-strangeness correlations $C_{BS}$ keep constant at $\sqrt{s_{NN}}$= 200, 19.6 GeV as collision system size increases. As collision energy increase, $C_{BS}$ approach the value in ideal QGP assumption ($C_{BS}$=1). At $\sqrt{s_{NN}}$= 7.7 GeV, $C_{BS}$ almost keep as constant but shows a slightly decreasing pattern with system size.
+	
+	For the case with hadron re-scattering at $\sqrt{s_{NN}}$= 200 and 19.6 GeV, the baryon-strangeness correlations $C_{BS}$ show similar patterns. Similarly, at $\sqrt{s_{NN}}$= 7.7 GeV, the pattern of $C_{BS}$ changing with the system size is not completely flat. And it's obvious that the re-scattering process would erase the signal of partonic matter which is consistent with the early study~\cite{Jin_2008}.
+Considering this dependence is related to rapidity distribution, we also present baryon and strangeness $dN/dy$ in $\mathrm{^{197}Au+^{197}Au}$ collisions at RHIC energies $\sqrt{s_{NN}}$ = 200, 19.6, and 7.7 GeV based on the string melting AMPT model, as shown in figure~\ref{Fig3_dNdy}.
+	 
+ We could find, in Fig~\ref{Fig3_dNdy} (a), (b), (c), the net-baryon $B$ rapidity distribution is more and more concentrated in the middle rapidity as collision energy decreasing.
+ At 19.6 and 7.7GeV, the low collision energy leads to positive baryon $B^{+}$ is much larger than negative baryon $B^{-}$(almost anti-proton).
+After the hadron re-scattering process, because of decay particle contribution, net-baryon $B$ shows a little higher than without hadron re-scattering, represented as a hollow marker in this figure. At 200GeV, non-Gaussian $B$ rapidity distribution also has been found in~\cite{Lin_2017xkd}.
+
+ Figure~\ref{Fig3_dNdy} (e) and (f) display net-strangeness $S$ rapidity distribution at 19.6 and 7.7GeV, respectively,  where $S$ always negative.
+ At $\sqrt{s_{NN}}$ = 200GeV, as shown in Fig~\ref{Fig3_dNdy} (d), $S$ turns to positive at mid rapidity.
+From this, as energy increasing, net-baryon $B$ decreases at the chosen rapidity region, more close to the QGP state, and the baryon-strangeness correlations $C_{BS}$ more close to 1. 
+The more net-baryon $B$ the collision system has, the state would be more close to the hadron gas phase and $C_{BS}$ would also be larger.
+
+As energy decrease, net-baryon $B$ and net-strangeness $S$ is showing a more and more sharp peak as plotted in Fig~\ref{Fig3_dNdy}.
+Predictably, if we only slightly change the kinetic window size, the final result of $C_{BS}$ will change a lot.
+Thus, we might draw a conclusion that $C_{BS}$ may also be effected by kinetic windows because of this non-flat rapidity distribution.
+
+		\begin{figure*}[htb]
+				\includegraphics[angle=0,scale=0.7]{./Fig2_one_sysScan_4.eps}
+				\caption{The baryon-strangeness correlations $C_{BS}$ versus $\left\langle \mathrm{N_{part}}\right\rangle$ with $\sqrt{s_{NN}}$ =200, 20, 7.7 GeV in the most central (0$-$5\%) $\mathrm{^{10}B+^{10}B}$, $\mathrm{^{12}C+^{12}C}$, $\mathrm{^{16}O+^{16}O}$, $\mathrm{^{20}Ne+^{20}Ne}$, $\mathrm{^{40}Ca+^{40}Ca}$, $\mathrm{^{96}Zr+^{96}Zr}$, and $\mathrm{^{197}Au+^{197}Au}$ collisions at RHIC energies $\sqrt{s_{NN}}$ = 200, 19.6, and 7.7 GeV in the string melting AMPT framework.				}
+				\label{Fig2_Sys_E_scan_CBS}
+	\end{figure*}
+
+		\begin{figure*}[htb]
+				\includegraphics[angle=0,scale=0.7]{./Fig3_six_pad_6.eps}
+				\caption{
+				AMPT results of positive baryon(strangeness) $B^{+}$($S^{+}$), negative baryon(strangeness) $B^{-}$($S^{-}$) and net-baryon(-strangeness) $B$($S$) $dN/dy$ for identified $p$, $n$, $\Lambda$, $\Sigma^{\pm}$, $\Xi^{\pm}$, $\Omega^{-}$, $K$ in
+				$\mathrm{^{197}Au+^{197}Au}$ collisions at RHIC energies $\sqrt{s_{NN}}$ = 200, 19.6, and 7.7 GeV based on the string melting AMPT framework.
+				We take the kinematics window as $|y|<0.2$.
+				}
+				\label{Fig3_dNdy}
+	\end{figure*}
+	
+	
+
+
+\par
+% y_max results
+
+We also present the result for Au+Au collisions at $\sqrt{s_{NN}}$= 200 GeV as a function of the rapidity acceptance range $y_{\text{max}}$ from the AMPT model.
+	From Fig~\ref{Fig4_ymax}, based on two different combinations of hadrons, we observe two different $y_{\text{max}}$ dependence.
+	If we chose $p, n, K$, and their antiparticles, the coefficient tends to increase with increasing $y_{\text{max}}$.
+	However, when we chose all hadrons we list before, the coefficient tends to decrease.
+	Both two cases $C_{BS}$ asymptotically to be a constant after $y_{\text{max}}>3$.
+	Also, the choice of hadron combination has no effect on the result at large $y_{\text{max}}$ at without the hadronic re-scattering stage.
+	It could be regarded as the consequence that baryon number and strangeness are conserved quantities. In previous study~\cite{Koch_origin}, the correlation coefficient $C_{BS}$ first will increase with $y_{\text{max}}$ increase 
+	and reach a maximum value at a certain $y_{\text{max}}$ before decreasing to 0.
+	
+
+	%  9.19
+	In order to go further understand this phenomenon, in Fig~\ref{Fig5_Num_Den} (a) and (b), we show the maximum rapidity accepted ($|y|<y_{\text{max}}$) dependence of the numerator ($C_{11}^{BS}= \left\langle BS \right\rangle - \left\langle B \right\rangle \left\langle S \right\rangle$) and the denominator ($C_{2}^{S}= \left\langle  S^{2} \right\rangle -\left\langle S \right\rangle^{2}$) of $C_{BS}$ in $\mathrm{^{197}Au+^{197}Au}$ collisions at $\sqrt{s_{NN}} = 200$ GeV with the string melting AMPT model, respectively. In the case of \Rmnum{2} ($p, n, K$), both $-3*C_{11}^{BS}$ and the $C_{2}^{S}$, they gradually tend to a constant value as $y_{\text{max}}$ increases, shown in Fig~\ref{Fig5_Num_Den} (a) and (b) respectively. However, in the case of \Rmnum{1}, $-3*C_{11}^{BS}$ increases with $y_{\text{max}}$ and then decreases to a constant value under hadron re-scattering process. From this we can see, the value of $C_{11}^{BS}$ is the dominant factor affecting the correlation coefficient $C_{BS}$.
+			
+	\begin{figure}[htb]
+				\includegraphics[angle=0,scale=0.3]{./Fig4_together_0.eps}
+				\caption{
+				The maximum rapidity accepted ($|y|<y_{\text{max}}$) dependence of the correlation coefficient $C_{BS}$
+				in $\mathrm{^{197}Au+^{197}Au}$ collisions at $\sqrt{s_{NN}} = 200$ GeV with the string melting AMPT framework.
+				Two different subset of hadrons are adopted to show different dependencies.
+				The two dashed lines indicate theoretical estimate of simple QGP ($C_{BS}$=1) and hadron gas ($C_{BS}$=0.66) at chemical freeze-out condition of $T$ =170MeV and $\mu_{b}$ = 0, respectively.  }
+				\label{Fig4_ymax}
+	\end{figure}
+	
+				\begin{figure}[htb]
+				\includegraphics[angle=0,scale=0.4]{./Fig5_two_pad_Num_Den.eps}
+				\caption{
+				The maximum rapidity accepted ($|y|<y_{\text{max}}$) dependence of the numerator ($C_{11}^{BS}$) and the denominator ($C_{2}^{S}$) of $C_{BS}$
+				in $\mathrm{^{197}Au+^{197}Au}$ collisions at $\sqrt{s_{NN}} = 200$ GeV with the string melting AMPT framework.
+				Two different subset of hadrons are adopted to show different dependencies.
+				}
+				\label{Fig5_Num_Den}
+	\end{figure}
+	
+	\par
+	%11.5, 19.6, 27,39,200GeV
+	The energy scan results of $C_{BS}$ by using AMPT model are shown in Fig~\ref{Fig6_E_sys_mub} (a) at $\sqrt{s_{NN}}$=11.5, 19.6, 27, 39, and 200 GeV in $\mathrm{^{197}Au+^{197}Au}$ central collisions.
+	$C_{BS}$ shows strong dependence on collision energy.
+	As energy increases, $C_{BS}$ goes down to 0.6 at the top RHIC energy.
+	This result also below the expected value for an ideal QGP phase which has also been mentioned~\cite{Haussler_2007}.
+	
+	\begin{figure}[htb]
+				\includegraphics[angle=0,scale=0.4]{./Fig6_two_pad_E_sys_scan.eps}
+				\caption{
+				On the left panel (a), the correlation coefficient $C_{BS}$ in the most central (0$-$5\%) $\mathrm{^{197}Au+^{197}Au}$ collisions, shown as a function of $\sqrt{s_{NN}}$.
+				We adopt $\sqrt{s_{NN}}$=11.5, 19.6, 27, 39, and 200 GeV.
+				On the right panel (b), the correlation coefficient $C_{BS}$ for a hadron gas at freeze-out, shown as a function of the baryon chemical potential $\mu_{B}$ in the most central (0$-$5\%) collision at different collision systems and energy.
+				For $C_{BS}$ system scan, we chose
+				 $\mathrm{^{10}B+^{10}B}$, $\mathrm{^{12}C+^{12}C}$, $\mathrm{^{16}O+^{16}O}$, $\mathrm{^{20}Ne+^{20}Ne}$, $\mathrm{^{40}Ca+^{40}Ca}$, $\mathrm{^{96}Zr+^{96}Zr}$, and $\mathrm{^{197}Au+^{197}Au}$ collisions at $\sqrt{s_{NN}}$ = 200GeV.
+				 For $C_{BS}$ energy scan, the choice of energy is consistent with the left panel.
+				}
+				\label{Fig6_E_sys_mub}
+	\end{figure}
+		
+	\par
+	Figure~\ref{Fig6_E_sys_mub} (b) show $C_{BS}$ as function of baryon chemical potential $\mu_{B}$ at chemical freeze-out at $\sqrt{s_{NN}}$= 200 GeV.
+		The extracted $\mu_{B}$ based on the thermal model is shown in the paper~\cite{wdf}.
+	At given collision energy, $\mu_{b}$ increases with system size and we could find a similar trend as Fig~\ref{Fig2_Sys_E_scan_CBS} (a).
+	The correlation coefficient $C_{BS}$ with the hadronic re-scattering process slightly increases with $\mu_{b}$ consistent with the previous conclusion~\cite{Koch_origin}.
+	Meanwhile, in Fig~\ref{Fig6_E_sys_mub} (b), the collision energy dependence of $C_{BS}$ also been displayed.
+	At a given system, as energy decreases, there will be more net baryons in the collision system leading to correlation $C_{BS}$ enhancement. It is interesting that the correlation coefficients present a smooth baryon chemical potential dependence if the collision systems and collision energy are characterized by the potential.
+
+	\par 		
+	
+	\sout{
+	Finally, we calculate the effect of $\alpha$ cluster distribution on the correlation coefficient $C_{BS}$.
+	%In principle, besides thermal fluctuations, there are many other sources and types of fluctuations, such as quantum fluctuations.
+	Since~\cite{a_cluster_origin} proposes that we may observe the signatures of $\alpha$ clustering in light nuclei from a heavy-ion collision.
+	Because of that, we would like to show the influence of the fluctuation of the initially nuclear geometry structure on the correlation coefficient $C_{BS}$.
+	$^{12}\mathrm{C}$ was considered with a three-$\alpha$ clustered triangle structure and $^{16}\mathrm{O}$ with four-$\alpha$ clustered tetrahedron structure.	
+	In Fig~\ref{Fig7},~\ref{Fig8}, we chose three different energy $\sqrt{s_{NN}}$=10, 200, and 6370GeV which represented by different $\left\langle \mathrm{N_{part}}\right\rangle$
+	to illustrate $\alpha$ cluster effects.
+	Basically no difference between Woods-Saxon and other deformation on the correlation results.}
+	
+	
+		\begin{figure}[htb]
+				\includegraphics[angle=0,scale=0.3]{./cc_com.eps}
+				\caption{The correlation coefficient $C_{BS}$ as function of energy(represented by the number of participants $\left\langle \mathrm{N_{part}}\right\rangle$) 
+				in the most central (impact parameter $b=0$) $\mathrm{^{12}C+^{12}C}$ collisions at $\sqrt{s_{NN}}$ = 10, 200, and 6370GeV.}
+				\label{Fig7}
+	\end{figure}
+		\begin{figure}[htb]
+				\includegraphics[angle=0,scale=0.3]{./oo_com.eps}
+				\caption{The correlation coefficient $C_{BS}$ as function of energy(represented by the number of participants $\left\langle \mathrm{N_{part}}\right\rangle$) 
+				in the most central (impact parameter $b=0$) $\mathrm{^{16}C+^{16}C}$ collisions at $\sqrt{s_{NN}}$ = 10, 200, and 6370GeV.}
+				\label{Fig8}
+	\end{figure}
+	
+	
+\section{summary}
+\label{sec:summary}	
+
+
+In this work, we study the system and energy dependence of the baryon-strangeness correlation coefficient in the framework of AMPT model. 
+The hadronic re-scattering process partly dissipated the baryon-strangeness correlations as expected and weak decay contributions for strangeness or the count of baryons may have an effect on final results and need to be further investigate.
+The combination of hadrons may also affect the results significantly. We also find when the maximum rapidity accepted $y_{\text{max}}>3$, these coefficients independent on the combination of hadrons in the final state based on AMPT model. And it is found that the correlation coefficients can be grouped if the collision system and collision energy are characterised by the baryon chemical potential.
+{\sout In addition, we have checked the effect of initial nucleon distribution in nuclei to the related results. The baryon-strangeness correlation seems not sensitive to this fluctuation.}
+
+
+		\begin{acknowledgements}
+	
+This work was supported in part by the National Natural Science Foundation of China under contract Nos. 11890714, 11875066, 11421505, and 11775288, and the National Key R\&D Program of China under Grant Nos. 2016YFE0100900 and 2018YFE0104600.
+
+	\end{acknowledgements}
+	
+	
+	
+	\section{Appendix}
+		  \begin{appendices} 
+	\section{observable} 
+	The joint cumulant of several random variables $X_{1}, ..., X_{n}$ is defined by a similar cumulant generating function
+	\begin{equation}
+K\left(t_{1}, t_{2}, \ldots, t_{n}\right)=\log E\left(\mathrm{e}^{\sum_{j=1}^{n} t_{j} X_{j}}\right).
+\end{equation}
+	 A consequence is that
+	 \begin{equation}
+\kappa\left(X_{1}, \ldots, X_{n}\right)=\sum_{\pi}(|\pi|-1) !(-1)^{|\pi|-1} \prod_{B \in \pi} E\left(\prod_{i \in B} X_{i}\right)
+\end{equation}
+where $\pi$ runs through the list of all partitions of $\{ 1, ..., n \}$, B runs through the list of all blocks of the partition $\pi$, and $|\pi|$ is the number of parts in the partition.
+In this analysis, we use $B$ and $S$ to represent the net-baryon number and net-strangeness in one event, respectively.
+The deviation of $B$ and $S$ from their mean value are expressed by $\delta B = B - \left\langle B \right\rangle$ and $\delta S = S -\left\langle S \right\rangle$, respectively. 
+As mentioned above, we use $\left\langle \cdot \right\rangle$ represent expected value.
+ According eq.2
+\begin{equation}
+\begin{aligned}
+%C(\delta B,\delta S) &=  \left\langle \delta B \delta S \right\rangle\\
+%			&= \left\langle BS \right\rangle - \left\langle B \right\rangle \left\langle S \right\rangle\\
+%C(\delta S,\delta S) &=  \left\langle \delta S \delta S \right\rangle\\
+%			&= \left\langle S^{2} \right\rangle - \left\langle S \right\rangle^{2}\\
+C(\delta B,\delta S) &=  \left\langle \delta B \delta S \right\rangle = \left\langle BS \right\rangle - \left\langle B \right\rangle \left\langle S \right\rangle\\
+C(\delta S,\delta S) &=  \left\langle \delta S \delta S \right\rangle = \left\langle S^{2} \right\rangle - \left\langle S \right\rangle^{2}\\
+			\end{aligned}
+\end{equation}
+Thus, the baryon-strangeness correlation coefficient:
+\begin{equation}
+\begin{aligned}
+C_{BS} = -3\frac{C(\delta B,\delta S)}{C(\delta S,\delta S)} = -3\frac{\left\langle BS \right\rangle - \left\langle B \right\rangle \left\langle S \right\rangle}{\left\langle S^{2}  \right\rangle - \left\langle S \right\rangle^{2}}
+			\end{aligned}
+\end{equation}
+\end{appendices}
+	
+	
+	  \begin{appendices} 
+      \section{ error  } 
+	 In paper~\cite{Luo_UrQMD} appendix, the author detailed display how to calculate statistical error in the way of the covariance of the multivariate moments.
+	 In Eq(A2), 
+	 \begin{equation}
+\operatorname{cov}\left(f_{i, j}, f_{k, h}\right)=\frac{1}{N}\left(f_{i+k, j+h}-f_{i, j} f_{k, h}\right)
+\end{equation}
+higher-order terms must be introduced for calculating the covariance.
+	 So we give all the items for those are necessary for calculating the error thought the table below. 
+	 Form the equation we know the error is proportional to $1/\sqrt{N}$, however, the corresponding event statistics we use are relatively small, 
+	 the statistical errors of results would be large.
+	 	\begin{table*}[]
+\scriptsize
+\centering
+\caption{This table list all the variables needed to calculate the results and statistical errors in Fig~\ref{Fig2_Sys_E_scan_CBS} (a) at $\sqrt{s_{NN}} = 200$ GeV with hadronic re-scattering process in AMPT framework.}
+\label{error_info}
+
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\toprule
+%\multicolumn{2}{c}{} & \multicolumn{2}{c}{$\sqrt{s_{NN}}$ = 200GeV} & \multicolumn{2}{c}{$\sqrt{s_{NN}}$ = 20GeV} & \multicolumn{2}{c}{$\sqrt{s_{NN}}$ = 7.7GeV} \\
+%\cmidrule(r){3-4} \cmidrule(r){5-6} \cmidrule(r){7-8}
+System & Event counts
+&$\left\langle B \right\rangle$ & $\left\langle S \right\rangle$
+&$\left\langle BS \right\rangle$  & $\left\langle S^{2} \right\rangle$ 
+&$\left\langle S^{3} \right\rangle$  &$\left\langle S^{4} \right\rangle$
+&$\left\langle BS^{2} \right\rangle$  &$\left\langle BS^{3} \right\rangle$
+&$\left\langle B^{2} \right\rangle$  &$\left\langle B^{2}S \right\rangle$
+&$\left\langle B^{2}S^{2} \right\rangle$  & statistical error
+      \\
+\hline
+$\mathrm{\leftidx{^{10}}B} + \mathrm{\leftidx{^{10}}B}$		&69800&0.0736533&0.0896132&-0.359728&1.49643&0.513395&9.36554&0.00531519&-2.32606&1.09706&0.0775501&2.47291&0.0233956 \\
+$\mathrm{\leftidx{^{12}}C} + \mathrm{\leftidx{^{12}}C}$		&99800&0.0812625&0.109599&-0.493968&1.95445&0.898196&14.9372&-0.0448697&-3.89148&1.45303&0.119419&4.09048&0.0178936\\
+$\mathrm{\leftidx{^{16}}O}+\mathrm{\leftidx{^{16}}O}$		&100000&0.12687&0.16194&-0.66834&2.72044&1.69218&27.0776&-0.00802&-6.71508&2.02597&0.2679&7.38878&0.0153406 \\
+$\mathrm{\leftidx{^{20}}Ne}+\mathrm{\leftidx{^{20}}Ne}$		&20000&0.21585&0.20645&-0.90485&3.62225&2.55395&45.4021&0.18435&-11.515&2.81145&0.28175&13.1649&0.0283403\\
+$\mathrm{\leftidx{^{40}}Ca}+\mathrm{\leftidx{^{40}}Ca}$		&20000&0.57985&0.49615&-1.86935&8.62085&12.5274&234.946&2.55565&-50.8957&6.67815&1.27765&67.8139&0.00965114 \\
+$\mathrm{\leftidx{^{96}}Zr}+\mathrm{\leftidx{^{96}}Zr}$ 		&19900&2.08171&1.28734&-3.71834&24.8124&93.0328&1867.91&34.6337&-295.664&22.621&3.92558&588.743&0.0124063\\
+$\mathrm{\leftidx{^{197}}Au}+\mathrm{\leftidx{^{197}}Au}$		&10000&5.8683&2.5061&-0.6767&58.6817&434.255&10679.6&258.236&-324.446&77.1819&14.6115&4089.6&0.496962\\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\end{appendices} 
+	\end{CJK*}	
+		%\bibliographystyle{unsrt}
+		%\bibliographystyle{abbrv}
+		\bibliography{no}
+		
+	
+	
+\end{document}
+
